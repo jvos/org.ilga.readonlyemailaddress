@@ -160,13 +160,11 @@ function readonlyemailaddress_civicrm_navigationMenu(&$menu) {
  */
 function readonlyemailaddress_civicrm_buildForm($formName, &$form) {    
     if('CRM_Contribute_Form_Contribution_Main' == $formName){
-        if($form->getAction() == CRM_Core_Action::ADD){
             
-            foreach($form->_elements as $key => $element){
-                if('Email Address' == $element->_label){
-                  $form->_elements[$key]->_flagFrozen = true;
-                }
+        foreach($form->_elements as $key => $element){
+            if('Email Address' == $element->_label){
+              $form->_elements[$key]->_flagFrozen = true;
             }
-        }        
+        }      
     }
 }
